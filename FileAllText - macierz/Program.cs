@@ -7,30 +7,26 @@ class Program
 
     static void Main(string[] args)
     {
-        int n = 10;
-        int[,] macierz = new int[n, n];
+        
+        
         string Macierz = "";
-        for(int i = 0; i < n; i++)
+        for(int i = 0; i < 10; i++)
         {
-            for (int j = 0; j < n; j++)
+            for (int j = 0; j < 10; j++)
             {
                 if(i == j)
                 {
-                    macierz[i, j] += 1;
+                    Macierz += "1 ";
                 } else
                 {
-                    macierz[i, j] += 0;
+                    Macierz += "0 ";
                 }
+                
             }
+                Macierz += "\n";
+            
         }
-        for(int i = 0; i < n; i++)
-        {
-            for(int j = 0; j < n; j++)
-            {
-                Macierz += macierz[i, j] + " ";
-            }
-            Macierz += "\n";
-        }
+        
             File.WriteAllText("macierz.txt", Macierz);
         string odczyt = File.ReadAllText("macierz.txt");
         Console.WriteLine(odczyt);
